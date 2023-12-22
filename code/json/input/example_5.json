@@ -1,0 +1,18 @@
+{
+    "player1": {
+        "golpes": [ 
+            "P", 
+            ""
+        ]
+    },
+    "player2": {
+        "movimientos": [
+            "", 
+            "ASA", 
+            "DA", 
+            "AAA", 
+            "", 
+            "SA"
+        ]
+    }
+}
