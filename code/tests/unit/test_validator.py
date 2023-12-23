@@ -87,7 +87,7 @@ class TestValidator:
 
         # Then
         assert player_one_movements is None
-        assert player_two_movements == ["SA", "SA", "ASA", "SA"]
+        assert player_two_movements == ["", "SA", "SA", "ASA", "SA"]
 
     def test_given_nil_and_invalid_hits_when_validate_and_sanitize_hits_then_return_sanitized_hits(
         self, nil_and_invalid_hits_input
@@ -102,4 +102,4 @@ class TestValidator:
 
         # Then
         assert player_one_hits is None
-        assert player_two_hits == ["", "K", "P", "P"]
+        assert player_two_hits == ["", "", "K", "P", "P"]
