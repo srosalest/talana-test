@@ -5,7 +5,7 @@ from typing import Optional, List, Union, Tuple
 
 def get_combinations_from_json(
     json_input_string: Optional[str],
-) -> Optional[List[List[Union[str, int]]]]:
+) -> Optional[Tuple[List[Union[str, int]]]]:
     if json_input_string:
         if parsed_and_sanitized_data := validate_and_sanitize_input(
             json_parser(json_input_string)
@@ -15,7 +15,7 @@ def get_combinations_from_json(
             if player_one and player_two:
                 player_one_combination = __merge_combinations(player_one)
                 player_two_combination = __merge_combinations(player_two)
-                return [player_one_combination, player_two_combination, starting_player]
+                return (player_one_combination, player_two_combination, starting_player)
 
 
 def get_starting_player(players_data: Tuple[List[List[str]]]) -> int:
@@ -25,15 +25,15 @@ def get_starting_player(players_data: Tuple[List[List[str]]]) -> int:
 
     if player_one_combinations_qty[0] != player_two_combinations_qty[0]:
         values = [0, player_one_combinations_qty[0], player_two_combinations_qty[0]]
-        return values.index(max(values))
+        return values.index(min(values))
 
     elif player_one_combinations_qty[1] != player_two_combinations_qty[1]:
         values = [0, player_one_combinations_qty[1], player_two_combinations_qty[1]]
-        return values.index(max(values))
+        return values.index(min(values))
 
     elif player_one_combinations_qty[2] != player_two_combinations_qty[2]:
         values = [0, player_one_combinations_qty[2], player_two_combinations_qty[2]]
-        return values.index(max(values))
+        return values.index(min(values))
 
     return 1
 

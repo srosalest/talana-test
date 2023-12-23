@@ -114,19 +114,18 @@ class TestCharacters:
 
         # Then
         assert (
-            first_character_combination_details
-            == HIT_COMBINATION_TONYN_STALLONE[TONYN_STALLONE_HIT_1]
+            first_character_combination_details[2]
+            == "Tonyn Stallone combina un Taladoken"
         )
         assert (
-            second_character_combination_details
-            == HIT_COMBINATION_ARNALDOR_SHUATSENEGUER[ARNALDOR_SHUATSENEGUER_HIT_1]
-        )
-
-        assert (
-            first_character_noisy_combination_details
-            == HIT_COMBINATION_TONYN_STALLONE[TONYN_STALLONE_HIT_1]
+            second_character_combination_details[2]
+            == "Arnaldor Shuatseneguer combina un Taladoken"
         )
         assert (
-            second_character_noisy_combination_details
-            == HIT_COMBINATION_ARNALDOR_SHUATSENEGUER[ARNALDOR_SHUATSENEGUER_HIT_1]
+            first_character_noisy_combination_details[2]
+            == "Tonyn Stallone se mueve a la derecha y combina un Taladoken"
+        )
+        assert (
+            second_character_noisy_combination_details[2]
+            == "Arnaldor Shuatseneguer se mueve a la derecha y combina un Taladoken"
         )
