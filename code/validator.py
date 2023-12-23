@@ -28,8 +28,9 @@ def validate_and_sanitize_movements(movements: Optional[List]) -> Optional[List]
     if movements:
         sanitized_movements = []
         for movement in movements:
-            if len(movement) <= 5:
-                sanitized_movements.append(movement)
+            if len(movement) > 5:
+                movement = ""
+            sanitized_movements.append(movement)
         return sanitized_movements
 
 
@@ -37,6 +38,7 @@ def validate_and_sanitize_hits(hits: Optional[List]) -> Optional[List]:
     if hits:
         sanitized_hits = []
         for hit in hits:
-            if len(hit) <= 1:
-                sanitized_hits.append(hit)
+            if len(hit) > 1:
+                hit = ""
+            sanitized_hits.append(hit)
         return sanitized_hits
