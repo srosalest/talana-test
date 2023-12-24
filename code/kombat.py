@@ -1,4 +1,5 @@
 import itertools
+import sys
 from typing import Optional, List
 
 from combinations import get_combinations_from_json
@@ -20,7 +21,8 @@ def setup_brawl(json_input_string: Optional[str]) -> None:
         energy=6,
         combinations=HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,
     )
-    player_one_combination, player_two_combination, starting_player = get_combinations_from_json(json_input_string)
+    if combinations := get_combinations_from_json(json_input_string):
+        player_one_combination, player_two_combination, starting_player = combinations
     
 
 def brawl(player_one, player_two, player_one_combination, player_two_combination, starting_player) -> None:
@@ -41,3 +43,12 @@ def player_turn(current_player, target_player, action) -> Optional[bool]:
         if target_player.get_energy() <= 0:
             print(f"{current_player.get_name()} ha ganado")
             return True
+
+
+if __name__ == "__main__":
+    arg = sys.argv[1]
+    if arg.endswith(".json"):
+        with open(arg) as f:
+            arg = json.dumps(json.load(f))
+            f.close()
+    setup_brawl(json_input_string=arg)
