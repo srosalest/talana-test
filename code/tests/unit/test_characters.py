@@ -1,30 +1,17 @@
 import pytest
+
 from characters import Character
 from constants import (
-    HIT_COMBINATION_TONYN_STALLONE,
-    HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,
-    TONYN_STALLONE,
     ARNALDOR_SHUATSENEGUER,
-    TONYN_STALLONE_HIT_1,
     ARNALDOR_SHUATSENEGUER_HIT_1,
+    HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,
+    HIT_COMBINATION_TONYN_STALLONE,
+    TONYN_STALLONE,
+    TONYN_STALLONE_HIT_1,
 )
 
 
 class TestCharacters:
-    @pytest.fixture()
-    def setup_character_one(self):
-        return Character(
-            name=TONYN_STALLONE, energy=6, combinations=HIT_COMBINATION_TONYN_STALLONE
-        )
-
-    @pytest.fixture()
-    def setup_character_two(self):
-        return Character(
-            name=ARNALDOR_SHUATSENEGUER,
-            energy=6,
-            combinations=HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,
-        )
-
     def test_given_characters_when_get_name_then_return_name(
         self, setup_character_one, setup_character_two
     ):

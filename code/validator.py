@@ -1,5 +1,5 @@
 import logging
-from typing import Dict, Optional, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 MOVEMENTS = 0
 HITS = 1

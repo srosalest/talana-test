@@ -1,10 +1,10 @@
-import pytest
 import json
 
+import pytest
 from validator import (
+    validate_and_sanitize_hits,
     validate_and_sanitize_input,
     validate_and_sanitize_movements,
-    validate_and_sanitize_hits,
 )
 
 PLAYER_ONE = 0

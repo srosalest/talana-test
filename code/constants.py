@@ -31,8 +31,8 @@ HIT_COMBINATION_ARNALDOR_SHUATSENEGUER = {
 }
 
 MOVEMENTS = {
-    "W" : "se mueve hacia arriba ",
-    "A" : "se mueve a la izquierda ",
-    "S" : "se mueve hacia abajo ",
-    "D" : "se mueve a la derecha ",
+    "W": "se mueve hacia arriba ",
+    "A": "se mueve a la izquierda ",
+    "S": "se mueve hacia abajo ",
+    "D": "se mueve a la derecha ",
 }

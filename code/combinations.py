@@ -1,7 +1,9 @@
 from parser import json_parser
-from validator import validate_and_sanitize_input
-from typing import Optional, List, Union, Tuple
+from typing import List, Optional, Tuple, Union
 
+from validator import validate_and_sanitize_input
+
+PLAYER_ONE = 1
 
 def get_combinations_from_json(
     json_input_string: Optional[str],
@@ -35,7 +37,7 @@ def get_starting_player(players_data: Tuple[List[List[str]]]) -> int:
         values = [0, player_one_combinations_qty[2], player_two_combinations_qty[2]]
         return values.index(min(values))
 
-    return 1
+    return PLAYER_ONE
 
 
 def __count_combinations(player_data: List[List[str]]) -> List[int]:

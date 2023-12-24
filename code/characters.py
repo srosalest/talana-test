@@ -26,30 +26,37 @@ class Character:
         for key in self.__combinations.keys():
             if key == combination:
                 combination_values = self.__combinations.get(key).copy()
-                combination_values.append(f"{self.__name} combina un {combination_values[1]}")
+                combination_values.append(
+                    f"{self.__name} combina un {combination_values[1]}"
+                )
                 return combination_values
             else:
                 if combination.endswith(key):
                     if key in combination:
-                        combination = combination.replace(key,'')
+                        combination = combination.replace(key, "")
                     relator = ""
-                    if combination.endswith("+"): combination = combination[:-1]
+                    if combination.endswith("+"):
+                        combination = combination[:-1]
                     for item in combination:
                         if movement := MOVEMENTS.get(item):
                             relator += movement
                     combination_values = self.__combinations.get(key).copy()
-                    combination_values.append(f"{self.__name} {relator}y combina un {combination_values[1]}")
+                    combination_values.append(
+                        f"{self.__name} {relator}y combina un {combination_values[1]}"
+                    )
                     return combination_values
-            
-        if combination.endswith("+"): combination = combination[:-1]
+
+        if combination.endswith("+"):
+            combination = combination[:-1]
         relator = ""
         for item in combination:
             if movement := MOVEMENTS.get(item):
                 relator += movement
         combination_values = self.__combinations.get(key).copy()
-        combination_values.append(f"{self.__name} {relator}y combina un {combination_values[1]}")
+        combination_values.append(
+            f"{self.__name} {relator}y combina un {combination_values[1]}"
+        )
         return combination_values
-
 
     def get_combinations(self) -> Dict[str, List[Union[str, int]]]:
         return self.__combinations

@@ -1,5 +1,5 @@
 import json
-from typing import Dict, Optional, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 
 def json_parser(json_input_string: Optional[str]) -> Optional[Tuple]:
