@@ -1,7 +1,7 @@
 import json
 
 import pytest
-from validator import (
+from parsing.validator import (
     validate_and_sanitize_hits,
     validate_and_sanitize_input,
     validate_and_sanitize_movements,

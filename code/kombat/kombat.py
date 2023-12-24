@@ -3,8 +3,8 @@ import json
 import sys
 from typing import List, Optional, Type
 
-from characters import Character
-from combinations import get_combinations_from_json
+from models.characters import Character
+from parsing.combinations import get_combinations_from_json
 from constants import (
     ARNALDOR_SHUATSENEGUER,
     HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,

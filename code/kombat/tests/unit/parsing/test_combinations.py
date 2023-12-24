@@ -1,6 +1,6 @@
 import pytest
 
-from combinations import get_combinations_from_json, get_starting_player
+from parsing.combinations import get_combinations_from_json, get_starting_player
 
 
 class TestCombinations:
