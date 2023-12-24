@@ -1,10 +1,13 @@
 import json
-from typing import Dict, Optional, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 
 def json_parser(json_input_string: Optional[str]) -> Optional[Tuple]:
     if json_input_string:
-        json_input = json.loads(json_input_string)
+        try:
+            json_input = json.loads(json_input_string)
+        except:
+            return
         player_one = json_input.get("player1")
         player_two = json_input.get("player2")
         if player_one and player_two:

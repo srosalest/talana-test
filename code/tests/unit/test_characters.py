@@ -1,30 +1,17 @@
 import pytest
+
 from characters import Character
 from constants import (
-    HIT_COMBINATION_TONYN_STALLONE,
-    HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,
-    TONYN_STALLONE,
     ARNALDOR_SHUATSENEGUER,
-    TONYN_STALLONE_HIT_1,
     ARNALDOR_SHUATSENEGUER_HIT_1,
+    HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,
+    HIT_COMBINATION_TONYN_STALLONE,
+    TONYN_STALLONE,
+    TONYN_STALLONE_HIT_1,
 )
 
 
 class TestCharacters:
-    @pytest.fixture()
-    def setup_character_one(self):
-        return Character(
-            name=TONYN_STALLONE, energy=6, combinations=HIT_COMBINATION_TONYN_STALLONE
-        )
-
-    @pytest.fixture()
-    def setup_character_two(self):
-        return Character(
-            name=ARNALDOR_SHUATSENEGUER,
-            energy=6,
-            combinations=HIT_COMBINATION_ARNALDOR_SHUATSENEGUER,
-        )
-
     def test_given_characters_when_get_name_then_return_name(
         self, setup_character_one, setup_character_two
     ):
@@ -114,19 +101,18 @@ class TestCharacters:
 
         # Then
         assert (
-            first_character_combination_details
-            == HIT_COMBINATION_TONYN_STALLONE[TONYN_STALLONE_HIT_1]
+            first_character_combination_details[2]
+            == "Tonyn Stallone combina un Taladoken"
         )
         assert (
-            second_character_combination_details
-            == HIT_COMBINATION_ARNALDOR_SHUATSENEGUER[ARNALDOR_SHUATSENEGUER_HIT_1]
-        )
-
-        assert (
-            first_character_noisy_combination_details
-            == HIT_COMBINATION_TONYN_STALLONE[TONYN_STALLONE_HIT_1]
+            second_character_combination_details[2]
+            == "Arnaldor Shuatseneguer combina un Taladoken"
         )
         assert (
-            second_character_noisy_combination_details
-            == HIT_COMBINATION_ARNALDOR_SHUATSENEGUER[ARNALDOR_SHUATSENEGUER_HIT_1]
+            first_character_noisy_combination_details[2]
+            == "Tonyn Stallone se mueve a la derecha y combina un Taladoken"
+        )
+        assert (
+            second_character_noisy_combination_details[2]
+            == "Arnaldor Shuatseneguer se mueve a la derecha y combina un Taladoken"
         )
