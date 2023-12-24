@@ -1,7 +1,7 @@
-from parser import json_parser
+from parsing.parser import json_parser
 from typing import List, Optional, Tuple, Union
 
-from validator import validate_and_sanitize_input
+from parsing.validator import validate_and_sanitize_input
 
 PLAYER_ONE = 1
 

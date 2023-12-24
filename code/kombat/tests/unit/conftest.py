@@ -1,7 +1,7 @@
 import json
 import pytest
 
-from characters import Character
+from models.characters import Character
 
 from constants import (
     ARNALDOR_SHUATSENEGUER,
@@ -10,8 +10,8 @@ from constants import (
     TONYN_STALLONE,
 )
 
-EXAMPLE_1 = "code/json/input/example_1.json"
-EXAMPLE_4 = "code/json/input/example_4.json"
+EXAMPLE_1 = "code/kombat/json/input/example_1.json"
+EXAMPLE_4 = "code/kombat/json/input/example_4.json"
 
 @pytest.fixture()
 def setup_character_one():

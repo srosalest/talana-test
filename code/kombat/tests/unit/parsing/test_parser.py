@@ -1,5 +1,5 @@
 import json
-from parser import json_parser, parse_hits, parse_movements
+from parsing.parser import json_parser, parse_hits, parse_movements
 
 import pytest
 

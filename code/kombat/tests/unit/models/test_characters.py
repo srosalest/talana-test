@@ -1,6 +1,6 @@
 import pytest
 
-from characters import Character
+from models.characters import Character
 from constants import (
     ARNALDOR_SHUATSENEGUER,
     ARNALDOR_SHUATSENEGUER_HIT_1,
